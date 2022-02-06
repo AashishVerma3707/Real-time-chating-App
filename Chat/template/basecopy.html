@@ -1,0 +1,26 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Real time chatting</title>
+    <link rel="stylesheet", href="{%static 'style3.css'%}">
+    </head>
+    <body>
+    {%if user.is_authenticated%}
+       <header class="wrapper">
+    <nav>
+                <form class="logout-link" action="{%url 'Account:logout'%}" method="post">
+            {%csrf_token%}
+        <button type="submit" >Logout</button>
+    </form>
+        </nav>
+
+       </header>
+{%endif%}
+<div class="wrapper">
+{%block content%}
+{% endblock %}
+    </div>
+</body>
+</html>

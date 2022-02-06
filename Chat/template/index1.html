@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="{% url 'App:check'%}">
+    {%csrf_token%}
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Room </label>
+      <input type="hidden" name="user_name" value="{{ request.user.username }}">
+    <input type="text" name="room_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Enter the name of Room to enter or Create one.</div>
+  </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+</body>
+</html>
+{%endblock%}

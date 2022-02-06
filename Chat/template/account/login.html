@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Login here</h2><br>
+<form action="/Account/log_in/" name="login" method="post">
+    {%csrf_token%}
+{{form}}
+    <input type="submit" value="login">
+</form>
+</body>
+</html>
+{%endblock%}
